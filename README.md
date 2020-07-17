@@ -1,6 +1,5 @@
 <p align="center">
   <img width="60" src="http://qdlmsf2rw.bkt.clouddn.com/12421.jpg">
-  <img width="60" src="12421.jpg">
 </p>
 
 <p align="center">
