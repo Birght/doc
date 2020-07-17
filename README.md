@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="60" src="http://qdlmsf2rw.bkt.clouddn.com/12421.jpg">
+  <img width="60" src="http://qdlmsf2rw.bkt.clouddn.com/a3iy3-biw2f.svg">
 </p>
 
 <p align="center">
