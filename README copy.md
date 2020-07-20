@@ -30,30 +30,27 @@ Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://j
 ```markdown
 <!-- 工程 -->
 
-### 2020 Vue项目
+# Header 1
+## Header 2
+### Header 3
 
+- Bulleted
+- List
 
+1. Numbered
+2. List
 
-git clone git@github.com:Birght/doc.git
+**Bold** and _Italic_ and `Code` text
 
-cd 2020
-
-npm install 
-
-npm run dev
-
+[Link](url) and ![Image](src)
 ```
 
+For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
 
+### Jekyll Themes
 
-### Node版本注意
+Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/Birght/Bright.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
 
-当前node版本，10.21.0
+### Support or Contact
 
-win10 64位
-
-### 技术支持或者联系我
-
-联系邮箱 [hero@shiwanyu.com](https://hero@shiwanyu.com/) 
-
-github页  [github](https://github.com/Birght)
+Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
