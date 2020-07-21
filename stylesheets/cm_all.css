@@ -1,0 +1,81 @@
+/* auth:Bright,ommon css */
+/* 后补充scss示例文件 */
+
+/* 字体颜色 */
+.cm_color_1{
+    color: tomato;
+}
+.cm_color_2{
+    color: teal;
+}
+.cm_color_3{
+    color: tan;
+}
+
+/* 背景颜色 */
+.cm_bgcolor_1{
+    background-color: tomato;
+}
+.cm_bgcolor_2{
+    background-color: teal;
+}
+.cm_bgcolor_3{
+    background-color: tan;
+}
+
+/* 字体大小 */
+.cm_font12{
+    font-size: 12px;
+}
+.cm_font14{
+    font-size: 14px;
+}
+.cm_font24{
+    font-size: 24px;
+}
+
+/* 内容显示控制，居左，居中，居右 ,follow bootstrap*/
+.cm_text_center{
+    text-align: center;
+}
+.cm_text_left{
+    text-align: left;
+}
+.cm_text_right{
+    text-align: right;
+}
+
+/* 外间距margin */
+.cm_mar_10{
+    margin: 10px;
+}
+
+.cm_mar_t10{
+    margin-top: 10px;
+}
+.cm_mar_tb10{
+    margin-top: 10px;
+}
+.cm_mar_lr10{
+    margin: 0 10px;
+}
+.cm_mar_20{
+    margin: 20px;
+}
+
+/* 内间距padding */
+.cm_pad_10{
+    padding: 10px;
+}
+.cm_pad_t10{
+    padding-top: 10px;
+}
+.cm_pad_tb10{
+    padding-top: 10px;
+}
+.cm_pad_lr10{
+    padding: 0 10px;
+}
+.cm_pad_20{
+    padding: 20px;
+}
