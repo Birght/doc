@@ -1,75 +1,183 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="en-zh">
 
 <head>
   <meta charset="UTF-8">
   <title>前端开发文档 by Birght</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
-  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
   <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
   <link rel="stylesheet" href="./bootstrap-4.5.0-dist/css/bootstrap.min.css">
-
+  <link rel="stylesheet" href="./stylesheets/cm_all.css">
 </head>
 
 <body>
-  <section class="page-header">
-    <h1 class="project-name">前端开发文档</h1>
-    <h2 class="project-tagline">
-      构建配置，结构布局，组件使用，方法封装
-    </h2>
-    <a href="https://github.com/Birght/doc" class="btn btn-lg btn-default">View on GitHub</a>
-    <a href="https://github.com/Birght/doc/zipball/master" class="btn btn-lg btn-default btn-shadow">Download .zip</a>
-    <a href="https://github.com/Birght/doc/tarball/master" class="btn btn-lg btn-default btn-shadow">Download .tar.gz</a>
-  </section>
+  <div class="page-header">
+    <h1>使用
+      <small>&nbsp;&nbsp;<span class="badge">vue-cli,vuex,vue-router,axios,elementUI</span></small>
+    </h1>
+  </div>
 
   <section>
     <div class="container-fluid">
       <div class="row">
         <div class="col-sm-2">
-          <div id="nav_list" class="list-group">
-            <a class="list-group-item list-group-item-action" href="#list-item-1">下载</a>
-            <a class="list-group-item list-group-item-action" href="#list-item-2">内容涵盖</a>
-            <a class="list-group-item list-group-item-action" href="#list-item-3">运行命令</a>
-            <a class="list-group-item list-group-item-action" href="#list-item-4">基本模板</a>
+          <div id="nav_list" class="list-group cm_mar_t50 cm_pad_20">
+            <a class="list-group-item list-group-item-action" href="#list-item-1">概览</a>
+            <a class="list-group-item list-group-item-action" href="#list-item-2">起步</a>
+            <a class="list-group-item list-group-item-action" href="#list-item-3">框架搭建</a>
+            <a class="list-group-item list-group-item-action" href="#list-item-4">组件</a>
           </div>
         </div>
-        <div class="col-sm-9 col-sm-offset-1">
-          <section class="main-content">
+        <div class="col-sm-10 col-sm-offset-1 cm_mar_t50">
+          <section class="container position-relative">
+            <div data-spy="scroll" data-target="#nav_list" data-offset="0">
+              <h4 id="list-item-1">概览，vue特性，脚手架对比</h4>
+              <div class="doc_content">
+                <p>vue项目特点</p>
+                <code>
+                  轻量级的框架,
+                  双向数据绑定,
+                  组件化开发,
+                  单页面路由,
+                  学习成本低,
+                  虚拟dom,
+                  渐进式框架,
+                  数据和结构的分离,
+                  运行速度快,
+                  插件化,
+                </code>
+                <br>
+                <br>
+                <p>脚手架对比</p>
+                <table class="table table-bordered table-condensed table-responsive">
+                  <thead>
+                    <tr>
+                      <th></th>
+                      <th>Vue CLI</th>
+                      <th>create-react-app</th>
+                      <th>parcel</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>快速原型开发</td>
+                      <td>支持</td>
+                      <td>-</td>
+                      <td>支持</td>
+                    </tr>
+                    <tr>
+                      <td>全局模式</td>
+                      <td>零配置原型开发就是全局的</td>
+                      <td>-</td>
+                      <td>支持</td>
+                    </tr>
+                    <tr>
+                      <td>插件</td>
+                      <td>支持</td>
+                      <td>-</td>
+                      <td>支持，扩展文件类型和文件输出</td>
+                    </tr>
+                    <tr>
+                      <td>扩展性</td>
+                      <td>强，通过插件扩展 wepack 配置</td>
+                      <td>弱, 强约定, 无法配置 webpack，可以 eject, 然后手工配置；支持 babel-macro;(严格说可以通过<a
+                          href="https://github.com/timarney/react-app-rewired" rel="nofollow noreferrer"
+                          target="_blank">react-app-rewired</a>进行扩展)</td>
+                      <td>中(可以配置 babel，postcss，Typescript); 提供了 Node API; 支持插件扩展文件类型</td>
+                    </tr>
+                    <tr>
+                      <td>多页面</td>
+                      <td>支持</td>
+                      <td>-</td>
+                      <td>支持</td>
+                    </tr>
+                    <tr>
+                      <td>适用范围</td>
+                      <td>Vue 组件的第一公民。通过扩展可以支持任意前端框架</td>
+                      <td>针对 React 开发，不支持其他框架</td>
+                      <td>parcel 是一个通用的打包工具，它的竞争对手是 webpack</td>
+                    </tr>
+                    <tr>
+                      <td>编译速度</td>
+                      <td>cache-loader,thread-loader 来加速 JS 和 TS 编译</td>
+                      <td>babel-loader 开启了 cache</td>
+                      <td>编译速度号称是 webpack 的两倍</td>
+                    </tr>
+                    <tr>
+                      <td>可升级性</td>
+                      <td>支持升级 cli-service, 插件需要单独升级, 插件需要遵循语义化版本. 太多插件存在升级风险</td>
+                      <td>支持升级 react-script, 官方维护，且强约定基本可以保障向下兼容</td>
+                      <td>支持升级 parcel-bundler</td>
+                    </tr>
+                    <tr>
+                      <td>UI</td>
+                      <td>图形化管理是 CLI 的特色之一</td>
+                      <td>-</td>
+                      <td>-</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <p>
+                  使用Vue全家桶，构建项目
+                  快速原型开发，降低webpack配置复杂，繁琐项
+                </p>
+              </div>
+              <h4 id="list-item-2">起步</h4>
+              <div class="doc_content">
+                <pre>
+                  # 项目地址
+                  <br>
+                  git clone git@github.com:Birght/doc.git
+                  <br>
+                  cd 2020
+                  <br>
+                  npm install
+                  <br>
+                  npm run dev
+                </pre>
+              </div>
+              <h4 id="list-item-3">框架搭建</h4>
+              <div class="doc_content">
 
-            <div data-spy="scroll" data-target="#nav_list" data-offset="0" class="scrollspy-example">
-              <h4 id="list-item-1">开发规范</h4>
-              <h3>
-                <a id="前端开发概括" class="anchor" aria-hidden="true">
-                  <span aria-hidden="true" class="octicon octicon-link"></span>
-                </a>前端开发概括
-              </h3>
-              <p>随着开发的高效性发展</p>
-              <h4 id="list-item-2">Item 2</h4>
-              <p>242424</p>
-              <h4 id="list-item-3">Item 3</h4>
-              <p>...</p>
-              <h4 id="list-item-4">Item 4</h4>
-              <p>...</p>
+              </div>
+              <h4 id="list-item-4">组件</h4>
+              <div class="doc_content">
+
+              </div>
             </div>
           </section>
-
         </div>
-
       </div>
     </div>
   </section>
   <footer class="site-footer">
-    <span class="site-footer-owner"><a href="https://github.com/Birght/doc">前端开发文档</a> 编辑由 <a
-        href="https://github.com/Birght">Birght</a>.</span>
+    <div class="container">
+      <div class="site-footer-owner cm_pad_20"><a href="https://github.com/Birght/doc">作者</a>
+        <a href="https://github.com/Birght">@Birght
+        </a>
+      </div>
+    </div>
   </footer>
-
 
   <!-- JS, Popper.js, and jQuery -->
 
   <script src="./bootstrap-4.5.0-dist/js/bootstrap.jquery.js"></script>
   <script src="./bootstrap-4.5.0-dist/js/bootstrap.min.js"></script>
+  <script>
+    $('body').scrollspy({ target: '#nav_list' })
+    $(window).scroll(function () {
+      //为了保证兼容性，这里取两个值，哪个有值取哪一个
+      //scrollTop就是触发滚轮事件时滚轮的高度
+      var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+      if (scrollTop > 260) {
+        $('#nav_list').addClass('doc_list_fiexd')
+      } else {
+        $('#nav_list').removeClass('doc_list_fiexd')
+      }
+    })
+  </script>
 </body>
 
 </html>

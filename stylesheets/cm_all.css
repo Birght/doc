@@ -6,7 +6,7 @@
     color: tomato;
 }
 .cm_color_2{
-    color: teal;
+    color: #337ab7;
 }
 .cm_color_3{
     color: tan;
@@ -17,7 +17,7 @@
     background-color: tomato;
 }
 .cm_bgcolor_2{
-    background-color: teal;
+    background-color: #337ab7;
 }
 .cm_bgcolor_3{
     background-color: tan;
@@ -61,6 +61,9 @@
 }
 .cm_mar_20{
     margin: 20px;
+}
+.cm_mar_t50{
+    margin-top: 50px;
 }
 
 /* 内间距padding */
