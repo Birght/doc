@@ -83,3 +83,9 @@ pre {
   border: 1px solid #ccc;
   border-radius: 4px;
 }
+.doc_empty{
+  width: 200px;
+}
+.do_line30{
+  line-height: 40px;
+}

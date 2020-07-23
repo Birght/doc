@@ -10,6 +10,14 @@
   <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
   <link rel="stylesheet" href="./bootstrap-4.5.0-dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="./stylesheets/cm_all.css">
+  <style>
+    .list-group-item.active {
+  z-index: 2;
+  color: #fff;
+  background-color: #155799;
+  border-color: #155799;
+}
+  </style>
 </head>
 
 <body>
@@ -37,16 +45,9 @@
               <div class="doc_content">
                 <p>vue项目特点</p>
                 <code>
-                  轻量级的框架,
-                  双向数据绑定,
-                  组件化开发,
-                  单页面路由,
-                  学习成本低,
-                  虚拟dom,
-                  渐进式框架,
-                  数据和结构的分离,
-                  运行速度快,
-                  插件化,
+                  构建一个轻量级，编译速度快，组件支持全面，开发人员使用简单，高效的vue框架。
+                  <br>
+                  支持数据定级缓存，响应式布局，多入口启动，浏览器兼容，编译生产文件体积尽量小
                 </code>
                 <br>
                 <br>
@@ -54,7 +55,9 @@
                 <table class="table table-bordered table-condensed table-responsive">
                   <thead>
                     <tr>
-                      <th></th>
+                      <th>
+                        <div class="doc_empty"></div>
+                      </th>
                       <th>Vue CLI</th>
                       <th>create-react-app</th>
                       <th>parcel</th>
@@ -119,28 +122,62 @@
                     </tr>
                   </tbody>
                 </table>
-                <p>
-                  使用Vue全家桶，构建项目
-                  快速原型开发，降低webpack配置复杂，繁琐项
-                </p>
               </div>
               <h4 id="list-item-2">起步</h4>
               <div class="doc_content">
-                <pre>
-                  # 项目地址
-                  <br>
-                  git clone git@github.com:Birght/doc.git
-                  <br>
-                  cd 2020
-                  <br>
-                  npm install
-                  <br>
-                  npm run dev
+                <pre class="do_line30">
+                    # Node安装，注意
+                    最新vue-cli为4.4.6(截至到目前：2020年7月22日)要求Node版本为V14+，低于此版本有报错情况
+                    建议使用Node版本低于V10.21，vue-cli版本低于V3.10.0
+
+                    # 项目地址
+                    git clone git@github.com:Birght/doc.git
+                    cd 2020
+                    npm install
+                    npm run dev
                 </pre>
               </div>
               <h4 id="list-item-3">框架搭建</h4>
               <div class="doc_content">
+                <pre>
+                  # 结构树
 
+
+                  ├─.eslintrc.js                                -- eslint配置文件
+                  ├─index.html                                  -- index入口页面
+                  ├─package-lock.json
+                  ├─package.json                                -- 依赖
+                  ├─README.md                                   -- 文档
+                  ├─static                                      -- 非打包静态资源
+                  |   └.gitkeep
+                  ├─src                                         -- 主目录
+                  |  ├─App.vue                                  -- vue入口挂载
+                  |  ├─main.js                                  -- vue主入口配置文件
+                  |  ├─views                                    -- 开发页面view层
+                  |  ├─store                                    -- vuex,数据存储
+                  |  ├─router                                   -- 路由配置
+                  |  ├─components                               -- 通用组件封装
+                  |  ├─common                                   -- 通用文件夹
+                  |  |   ├─utils                                -- 常量配置
+                  |  |   ├─style                                -- 通用css
+                  |  |   ├─public                               -- 通用方法，工具函数，全局注册函数
+                  |  ├─assets                                   -- 资源文件夹
+                  |  |   ├─svg                                  -- svg文件
+                  |  |   ├─images                               -- png文件夹
+                  ├─config
+                  |   ├─dev.env.js
+                  |   ├─index.js                                -- 脚手架配置 
+                  |   └prod.env.js
+                  ├─build                                       -- 生产环境配置
+                  |   ├─build.js
+                  |   ├─check-versions.js
+                  |   ├─logo.png
+                  |   ├─utils.js
+                  |   ├─vue-loader.conf.js
+                  |   ├─webpack.base.conf.js
+                  |   ├─webpack.dev.conf.js
+                  |   └webpack.prod.conf.js
+                </pre>
               </div>
               <h4 id="list-item-4">组件</h4>
               <div class="doc_content">

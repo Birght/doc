@@ -1,0 +1,55 @@
+npm 生成文件树命令
+treer -e ./result.txt -i node_modules
+
+D:\1_shi\shi_blog\blog\2020
+├─.babelrc
+├─.editorconfig
+├─.eslintignore
+├─.eslintrc.js
+├─.gitignore
+├─.postcssrc.js
+├─index.html
+├─package-lock.json
+├─package.json
+├─README.md
+├─result.txt
+├─static
+|   └.gitkeep
+├─src
+|  ├─App.vue
+|  ├─main.js
+|  ├─views
+|  |   ├─home
+|  |   |  └index.vue
+|  |   ├─demo
+|  |   |  └svgdemo.vue
+|  ├─store
+|  ├─router
+|  |   ├─index.js
+|  |   ├─modules
+|  |   |    ├─a.js
+|  |   |    └index.js
+|  ├─components
+|  |     └HelloWorld.vue
+|  ├─common
+|  |   ├─utils
+|  |   ├─style
+|  |   ├─public
+|  ├─assets
+|  |   ├─svg
+|  |   |  └footbal.svg
+|  |   ├─images
+|  |   |   └111.png
+├─config
+|   ├─dev.env.js
+|   ├─index.js
+|   └prod.env.js
+├─build
+|   ├─build.js
+|   ├─check-versions.js
+|   ├─logo.png
+|   ├─utils.js
+|   ├─vue-loader.conf.js
+|   ├─webpack.base.conf.js
+|   ├─webpack.dev.conf.js
+|   └webpack.prod.conf.js
