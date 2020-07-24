@@ -28,7 +28,6 @@
 }
 a,a:link,a:visited,a:hover,a:active{
   text-decoration: none;
-  color:inherit;
 }
 .doc_ex_title:before {
   left: -30px;
@@ -86,6 +85,24 @@ pre {
 .doc_empty{
   width: 200px;
 }
-.do_line30{
+.doc_line30{
   line-height: 40px;
+}
+.doc_panel{
+  margin: 3px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+.doc_pannel_head{
+  padding: 6px 12px;
+  color: #fff;
+  background-color: #155799;
+  border-color: #ddd;
+}
+.doc_panel_body{
+  padding: 20px;
+}
+.doc_w100{
+  width: 100%;
+  display: inline-block;
 }

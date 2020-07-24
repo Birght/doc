@@ -12,11 +12,20 @@
   <link rel="stylesheet" href="./stylesheets/cm_all.css">
   <style>
     .list-group-item.active {
-  z-index: 2;
-  color: #fff;
-  background-color: #155799;
-  border-color: #155799;
-}
+      z-index: 2;
+      color: #fff;
+      background-color: #155799;
+      border-color: #155799;
+    }
+
+    a,
+    a:link,
+    a:visited,
+    a:hover,
+    a:active {
+      text-decoration: none;
+      color: inherit;
+    }
   </style>
 </head>
 
@@ -34,7 +43,7 @@
           <div id="nav_list" class="list-group cm_mar_t50 cm_pad_20">
             <a class="list-group-item list-group-item-action" href="#list-item-1">概览</a>
             <a class="list-group-item list-group-item-action" href="#list-item-2">起步</a>
-            <a class="list-group-item list-group-item-action" href="#list-item-3">框架搭建</a>
+            <a class="list-group-item list-group-item-action" href="#list-item-3">框架</a>
             <a class="list-group-item list-group-item-action" href="#list-item-4">组件</a>
           </div>
         </div>
@@ -45,7 +54,7 @@
               <div class="doc_content">
                 <p>vue项目特点</p>
                 <code>
-                  构建一个轻量级，编译速度快，组件支持全面，开发人员使用简单，高效的vue框架。
+                  构建一个轻量级，编译速度快，组件支持全面，开发效率高效，便捷的vue框架。
                   <br>
                   支持数据定级缓存，响应式布局，多入口启动，浏览器兼容，编译生产文件体积尽量小
                 </code>
@@ -123,12 +132,13 @@
                   </tbody>
                 </table>
               </div>
-              <h4 id="list-item-2">起步</h4>
+              <h4 id="list-item-2" class="cm_mar_t20">起步</h4>
               <div class="doc_content">
-                <pre class="do_line30">
+                <pre class="doc_line30">
                     # Node安装，注意
-                    最新vue-cli为4.4.6(截至到目前：2020年7月22日)要求Node版本为V14+，低于此版本有报错情况
-                    建议使用Node版本低于V10.21，vue-cli版本低于V3.10.0
+                    最新vue-cli为4.4.6(截至到目前：2020年7月22日)
+                    Node版本V10.21
+                    Node版本V14启动vue-cli有报错情况
 
                     # 项目地址
                     git clone git@github.com:Birght/doc.git
@@ -137,11 +147,10 @@
                     npm run dev
                 </pre>
               </div>
-              <h4 id="list-item-3">框架搭建</h4>
+              <h4 id="list-item-3">框架</h4>
               <div class="doc_content">
                 <pre>
-                  # 结构树
-
+                  # 文件目录树
 
                   ├─.eslintrc.js                                -- eslint配置文件
                   ├─index.html                                  -- index入口页面
@@ -164,11 +173,11 @@
                   |  ├─assets                                   -- 资源文件夹
                   |  |   ├─svg                                  -- svg文件
                   |  |   ├─images                               -- png文件夹
-                  ├─config
+                  ├─config                                      -- 脚手架配置 
                   |   ├─dev.env.js
-                  |   ├─index.js                                -- 脚手架配置 
+                  |   ├─index.js                                
                   |   └prod.env.js
-                  ├─build                                       -- 生产环境配置
+                  ├─build                                       -- webpack编辑/打包配置
                   |   ├─build.js
                   |   ├─check-versions.js
                   |   ├─logo.png
@@ -178,6 +187,119 @@
                   |   ├─webpack.dev.conf.js
                   |   └webpack.prod.conf.js
                 </pre>
+
+                <h2>依赖使用，架构配置</h2>
+
+                <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                  <div class="doc_panel">
+                    <div class="doc_pannel_head" role="tab" id="headingOne">
+                      <a class="collapsed doc_w100" role="button" data-toggle="collapse" data-parent="#accordion"
+                        href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        1, 增加打包分析 webpack-bundle-analyzer
+                      </a>
+                    </div>
+                    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel"
+                      aria-labelledby="headingOne">
+                      <div class="doc_panel_body">
+                        打包分析:使用交互式可缩放树图可视化webpack输出文件的大小。
+                        通过此功能，清晰的查看，编译后，当前项目是哪些文件大，占有率高。
+                        根据不同情况做出对应的策略。
+                        例如说，编译后发现svg文件过大，入口文件app.xxx.js大于3M等等
+                        遇到这种情况，做出对应的处理，svg压缩，文件分片处理。
+                        <div class="cm_mar_20">
+                          <kbd>使用</kbd>
+                        </div>
+                        <pre> # 安装依赖<br> npm i webpack-bundle-analyzer</pre>
+                        <pre> # 修改webpack.dev.conf.js(文件路径:2020\build\webpack.dev.conf.js)
+
+// 引入打包分析
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
+
+// 注入plugins
+plugins: [
+  ...
+  ...
+new BundleAnalyzerPlugin()
+  ...
+  ...
+]
+                        </pre>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="doc_panel">
+                    <div class="doc_pannel_head" role="tab" id="headingTwo">
+                      <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
+                        href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        2, 增加资源服务压缩， compression-webpack-plugin
+                      </a>
+                    </div>
+                    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                      <div class="doc_panel_body">
+                        资源服务压缩: 将资源(js/html/svg/png)压缩为符合Content-Encoding:gizp传输格式的文件。
+                        <div class="cm_mar_20">
+                          <kbd>使用gizp方式进行压缩</kbd>
+                        </div>
+                        客户端可以事先声明一系列的可以支持压缩模式，与请求一齐发送。 Accept-Encoding 这个首部就是用来进行这种内容编码形式协商的：
+                        <p>
+                          Accept-Encoding: gzip, deflate
+                        </p>
+                        服务器在 Content-Encoding 响应首部提供了实际采用的压缩模式：
+                        <p>
+                          Content-Encoding: gzip
+                        </p>
+                        需要注意的是，服务器端并不强制要求一定使用何种压缩模式。采用哪种压缩方式高度依赖于服务器端的设置，及其所采用的模块。
+
+                        <div class="cm_mar_20">
+                          <kbd>使用</kbd>
+                        </div>
+                        <pre> # 安装依赖<br> npm i compression-webpack-plugin</pre>
+                        <pre> # 修改webpack.prod.conf(文件路径:2020\build\webpack.prod.conf)
+
+if (config.build.productionGzip) {
+  const CompressionWebpackPlugin = require('compression-webpack-plugin')
+
+  webpackConfig.plugins.push(
+    new CompressionWebpackPlugin({
+      asset: '[path].gz[query]',
+      algorithm: 'gzip',
+      test: new RegExp(
+        '\\.(' +
+        config.build.productionGzipExtensions.join('|') +
+        ')$'
+      ),
+      threshold: 10240,
+      minRatio: 0.8
+    })
+  )
+}
+                          </pre>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="doc_panel">
+                    <div class="doc_pannel_head" role="tab" id="headingThree">
+                      <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
+                        href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        Collapsible Group Item #3
+                      </a>
+                    </div>
+                    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel"
+                      aria-labelledby="headingThree">
+                      <div class="doc_panel_body">
+                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
+                        3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt
+                        laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin
+                        coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes
+                        anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
+                        occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard
+                        of them accusamus labore sustainable VHS.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
               </div>
               <h4 id="list-item-4">组件</h4>
               <div class="doc_content">
