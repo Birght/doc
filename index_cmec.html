@@ -3,7 +3,8 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>前端开发文档 by Birght</title>
+  <title>vue开发文档</title>
+  <link rel="icon" href="doc_assets/favicon.png">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
   <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
@@ -43,7 +44,7 @@
           <div id="nav_list" class="list-group cm_mar_t50 cm_pad_20">
             <a class="list-group-item list-group-item-action" href="#list-item-1">概览</a>
             <a class="list-group-item list-group-item-action" href="#list-item-2">起步</a>
-            <a class="list-group-item list-group-item-action" href="#list-item-3">框架</a>
+            <a class="list-group-item list-group-item-action" href="#list-item-3">依赖/配置</a>
             <a class="list-group-item list-group-item-action" href="#list-item-4">组件</a>
           </div>
         </div>
@@ -52,7 +53,7 @@
             <div data-spy="scroll" data-target="#nav_list" data-offset="0">
               <h4 id="list-item-1">概览，vue特性，脚手架对比</h4>
               <div class="doc_content">
-                <p>vue项目特点</p>
+                <p>此文档目标</p>
                 <code>
                   构建一个轻量级，编译速度快，组件支持全面，开发效率高效，便捷的vue框架。
                   <br>
@@ -60,8 +61,11 @@
                 </code>
                 <br>
                 <br>
-                <p>脚手架对比</p>
-                <table class="table table-bordered table-condensed table-responsive">
+                <p>为什么选择vue-cli?</p>
+                <code>
+                  vue-cli作为官方推荐，文档全面，内置了webpack一些配置项，省时省力
+                </code>
+                <table class="table table-bordered table-condensed table-responsive cm_mar_t10">
                   <thead>
                     <tr>
                       <th>
@@ -188,7 +192,7 @@
                   |   └webpack.prod.conf.js
                 </pre>
 
-                <h2>依赖使用，架构配置</h2>
+                <h2>依赖/配置</h2>
 
                 <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
                   <div class="doc_panel">
@@ -274,6 +278,15 @@ if (config.build.productionGzip) {
   )
 }
                           </pre>
+                          <p>对应后台服务器需要配置gzip，以ngix为例</p>
+                          <pre># 在http,server,loaction下加入以下代码，更多查看<a href="https://www.nginx.cn/doc/">ngix文档</a>
+
+gzip_static         on;
+gzip_http_version   1.1;
+gzip_proxied        expired no-cache no-store private auth;
+gzip_disable        "MSIE [1-6]\.";
+gzip_vary           on;
+                          </pre>
                       </div>
                     </div>
                   </div>
@@ -281,7 +294,7 @@ if (config.build.productionGzip) {
                     <div class="doc_pannel_head" role="tab" id="headingThree">
                       <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
                         href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                        Collapsible Group Item #3
+                        2, 增加图片压缩与svg压缩， image-webpack-loader
                       </a>
                     </div>
                     <div id="collapseThree" class="panel-collapse collapse" role="tabpanel"
