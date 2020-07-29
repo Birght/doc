@@ -68,7 +68,10 @@ const devWebpackConfig = merge(baseWebpackConfig, {
       }
     ]),
     // 打包分析注册
-    new BundleAnalyzerPlugin()
+    new BundleAnalyzerPlugin({
+      analyzerHost: '127.0.0.1',
+      analyzerPort: '9002'
+    })
   ]
 })
 

@@ -57,13 +57,13 @@
                 <code>
                   构建一个轻量级，编译速度快，组件支持全面，开发效率高效，便捷的vue框架。
                   <br>
-                  支持数据定级缓存，响应式布局，多入口启动，浏览器兼容，编译生产文件体积尽量小
+                  支持数据定级缓存，响应式布局，多入口启动，浏览器兼容，性能高效
                 </code>
                 <br>
                 <br>
                 <p>为什么选择vue-cli?</p>
                 <code>
-                  vue-cli作为官方推荐，文档全面，内置了webpack一些配置项，省时省力
+                  vue-cli作为官方脚手架，文档全面，内置了webpack一些配置项，省去冗余的webpack基础配置
                 </code>
                 <table class="table table-bordered table-condensed table-responsive cm_mar_t10">
                   <thead>
@@ -154,7 +154,11 @@
               <h4 id="list-item-3">框架</h4>
               <div class="doc_content">
                 <pre>
-                  # 文件目录树
+                  # 文件目录树(自动生成文件目录树方式，
+                  安装:npm install treer -g,
+                  执行:treer -e ./result.txt -i node_modules
+
+
 
                   ├─.eslintrc.js                                -- eslint配置文件
                   ├─index.html                                  -- index入口页面
@@ -257,7 +261,14 @@ new BundleAnalyzerPlugin()
                         <div class="cm_mar_20">
                           <kbd>使用</kbd>
                         </div>
-                        <pre> # 安装依赖<br> npm i compression-webpack-plugin</pre>
+                        <pre> # 安装依赖<br> npm i compression-webpack-plugin@1.0.0-beta.1</pre>
+
+
+                        <pre> # 修改config文件夹下的index.js(文件路径:2020\config\index.js)<br>
+更改line:67行，<b>productionGzip: true</b>
+
+                        </pre>
+
                         <pre> # 修改webpack.prod.conf(文件路径:2020\build\webpack.prod.conf)
 
 if (config.build.productionGzip) {
@@ -278,8 +289,8 @@ if (config.build.productionGzip) {
   )
 }
                           </pre>
-                          <p>对应后台服务器需要配置gzip，以ngix为例</p>
-                          <pre># 在http,server,loaction下加入以下代码，更多查看<a href="https://www.nginx.cn/doc/">ngix文档</a>
+                        <p>对应后台服务器需要配置gzip，以ngix为例</p>
+                        <pre># 在http,server,loaction下加入以下代码，更多查看<a href="https://www.nginx.cn/doc/">ngix文档</a>
 
 gzip_static         on;
 gzip_http_version   1.1;
