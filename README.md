@@ -1,4 +1,4 @@
-<p align="center">
+<!-- <p align="center">
     <img width="60" 
     src="https://s1.ax1x.com/2020/07/17/Uyfqs0.th.jpg" alt="Uyfqs0.jpg" border="0" />
 </p>
@@ -10,7 +10,7 @@
   <a href="https://github.com/ElemeFE/element">
     <img src="https://img.shields.io/badge/element--ui-2.7.0-brightgreen.svg" alt="element-ui">
   </a>
-</p>
+</p> -->
 
 ## 前端开发文档
 
@@ -29,17 +29,14 @@
 ```markdown
 <!-- 工程 -->
 
-### 2020 Vue项目
 
+编辑器选择 VsCode Studio
 
-
-git clone git@github.com:Birght/doc.git
-
-cd 2020
-
-npm install 
-
-npm run dev
+插件选择:
+ESLint
+open in broweer
+Vutur(已内置)
+vscode-icons
 
 ```
 

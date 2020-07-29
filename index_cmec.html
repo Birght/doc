@@ -27,6 +27,12 @@
       text-decoration: none;
       color: inherit;
     }
+
+    .doc_ul_menu2 {
+      padding: 5px;
+      margin: 0;
+      text-align: center;
+    }
   </style>
 </head>
 
@@ -41,11 +47,22 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-sm-2">
-          <div id="nav_list" class="list-group cm_mar_t50 cm_pad_20">
+          <div id="nav nav_list" class="list-group cm_mar_t50 cm_pad_20">
             <a class="list-group-item list-group-item-action" href="#list-item-1">概览</a>
             <a class="list-group-item list-group-item-action" href="#list-item-2">起步</a>
+            <a class="list-group-item list-group-item-action" href="#list-item-2-1">项目树</a>
             <a class="list-group-item list-group-item-action" href="#list-item-3">依赖/配置</a>
-            <a class="list-group-item list-group-item-action" href="#list-item-4">组件</a>
+            <a class="dropdown">
+              <a class="list-group-item list-group-item-action dropdown-toggle" href="#" id="dropdownMenu2"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">组件</a>
+              <ul class="dropdown-menu doc_ul_menu2" aria-labelledby="dropdownMenu2">
+                <a class="dropdown-item" href="#list-item-4-1">Form表单</a>
+                <a class="dropdown-item" href="#list-item-4-2">table表格</a>
+                <a class="dropdown-item" href="#list-item-4-3">文件上传(大附件)</a>
+                <a class="dropdown-item" href="#list-item-4-4">图表</a>
+                <a class="dropdown-item" href="#list-item-4-5">地图</a>
+              </ul>
+            </a>
           </div>
         </div>
         <div class="col-sm-10 col-sm-offset-1 cm_mar_t50">
@@ -151,7 +168,7 @@
                     npm run dev
                 </pre>
               </div>
-              <h4 id="list-item-3">框架</h4>
+              <h4 id="list-item-2-1">项目树</h4>
               <div class="doc_content">
                 <pre>
                   # 文件目录树(自动生成文件目录树方式，
@@ -184,20 +201,20 @@
                   ├─config                                      -- 脚手架配置 
                   |   ├─dev.env.js
                   |   ├─index.js                                
-                  |   └prod.env.js
-                  ├─build                                       -- webpack编辑/打包配置
-                  |   ├─build.js
-                  |   ├─check-versions.js
-                  |   ├─logo.png
-                  |   ├─utils.js
-                  |   ├─vue-loader.conf.js
-                  |   ├─webpack.base.conf.js
-                  |   ├─webpack.dev.conf.js
-                  |   └webpack.prod.conf.js
+                  |   └─prod.env.js
+                  └─build                                       -- webpack编辑/打包配置
+                      ├─build.js
+                      ├─check-versions.js
+                      ├─logo.png
+                      ├─utils.js
+                      ├─vue-loader.conf.js
+                      ├─webpack.base.conf.js
+                      ├─webpack.dev.conf.js
+                      └─webpack.prod.conf.js
                 </pre>
-
-                <h2>依赖/配置</h2>
-
+              </div>
+              <h4 id="list-item-3">依赖/配置</h4>
+              <div class="doc_content">
                 <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
                   <div class="doc_panel">
                     <div class="doc_pannel_head" role="tab" id="headingOne">
@@ -311,23 +328,54 @@ gzip_vary           on;
                     <div id="collapseThree" class="panel-collapse collapse" role="tabpanel"
                       aria-labelledby="headingThree">
                       <div class="doc_panel_body">
-                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
-                        3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt
-                        laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin
-                        coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes
-                        anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
-                        occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard
-                        of them accusamus labore sustainable VHS.
+                        对于PNG，JPEG，GIF，SVG和WEBP图像进行压缩处理
+                        <div class="cm_mar_20">
+                          <kbd>使用</kbd>
+                        </div>
+                        <pre> # 安装依赖<br> npm i image-webpack-loader</pre>
+                        <pre> # 修改webpack.base.conf.js(文件路径:2020\build\webpack.base.conf)
+// 在url-loader追加如下代码
+
+{
+  test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
+  use: [
+    {
+      loader: 'url-loader',
+      options: {
+        limit: 10000,
+        name: utils.assetsPath('img/[name].[hash:7].[ext]')
+      }
+    },
+    {
+      loader: 'image-webpack-loader',
+      options: {
+        bypassOnDebug: true
+      }
+    }
+  ]
+}
+                                                    </pre>
                       </div>
                     </div>
                   </div>
                 </div>
 
-
               </div>
-              <h4 id="list-item-4">组件</h4>
-              <div class="doc_content">
-
+              <h4>组件</h4>
+              <div class="doc_content doc_h400" id="list-item-4-1">
+                form表单
+              </div>
+              <div class="doc_content doc_h400" id="list-item-4-2">
+                table表格
+              </div>
+              <div class="doc_content doc_h400" id="list-item-4-3">
+                文件上传
+              </div>
+              <div class="doc_content doc_h400" id="list-item-4-4">
+                图表
+              </div>
+              <div class="doc_content doc_h400" id="list-item-4-5">
+                地图
               </div>
             </div>
           </section>
@@ -347,7 +395,9 @@ gzip_vary           on;
   <!-- JS, Popper.js, and jQuery -->
 
   <script src="./bootstrap-4.5.0-dist/js/bootstrap.jquery.js"></script>
+  <script src="./bootstrap-4.5.0-dist/js/popper.min.js"></script>
   <script src="./bootstrap-4.5.0-dist/js/bootstrap.min.js"></script>
+
   <script>
     $('body').scrollspy({ target: '#nav_list' })
     $(window).scroll(function () {

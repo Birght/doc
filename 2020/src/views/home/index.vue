@@ -1,27 +1,35 @@
 <template>
   <div>
       home
-        <div v-for="(item,index) in imgArr" :key="index">
-          <img :src="item.src" alt="" class="test_img">
+        <div v-for="(item,index) in imgesArr" :key="index">
+          <img :src="imgUrl(item)" alt="" class="test_img">
         </div>
   </div>
 </template>
 
 <script>
-// import aaa from '@/assets/images/111.png'
+var imagesContext = require.context('@/assets/images/', false, /\.png$/)
+console.log(imagesContext)
+console.log(imagesContext('./111.png'))
+console.log(imagesContext.keys())
+
 export default {
   name: 'home',
   data () {
     return {
-      imgArr: [
-        {
-          src: require('../../../static/images/111.jpg')
-        }
-      ]
+      images: [],
+      msg: 'Welcome to Your Vue.js App'
     }
   },
-  mouted () {
-    console.log(this.imgArr)
+  computed: {
+    imgesArr: () => {
+      return imagesContext.keys()
+    }
+  },
+  methods: {
+    imgUrl: function (path) {
+      return imagesContext(path)
+    }
   }
 
 }

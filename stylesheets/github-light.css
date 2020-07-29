@@ -106,3 +106,11 @@ pre {
   width: 100%;
   display: inline-block;
 }
+.doc_h400{
+  height: 400px;
+  background-color: slategray;
+}
+
+.doc_ul_menu2 a{
+  text-align: center;
+}
