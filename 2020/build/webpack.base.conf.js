@@ -53,6 +53,7 @@ module.exports = {
       },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
+        exclude: path.resolve(__dirname, '../src/assets/icons'),
         use: [
           {
             loader: 'url-loader',
@@ -67,6 +68,20 @@ module.exports = {
               bypassOnDebug: true
             }
           }
+        ]
+      },
+      {
+        test: /\.svg$/,
+        include: path.resolve(__dirname, '../src/assets/icons'),
+        use: [
+          {
+            loader: 'svg-sprite-loader',
+            options: {
+              symbolId: 'icon-[name]'
+            }
+          },
+          'svg-transform-loader',
+          'svgo-loader'
         ]
       },
       {
