@@ -53,7 +53,7 @@ module.exports = {
       },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
-        exclude: path.resolve(__dirname, '../src/assets/icons'),
+        exclude: resolve('src/assets/icons'),
         use: [
           {
             loader: 'url-loader',
@@ -72,7 +72,7 @@ module.exports = {
       },
       {
         test: /\.svg$/,
-        include: path.resolve(__dirname, '../src/assets/icons'),
+        include: resolve('src/assets/icons'),
         use: [
           {
             loader: 'svg-sprite-loader',

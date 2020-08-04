@@ -1,14 +1,7 @@
 <template>
   <div>
       home
-            <svg-icon icon-class="footbal"></svg-icon>
-            <svg-icon icon-class="1-01"></svg-icon>
-            <svg-icon icon-class="1-02"></svg-icon>
-            <svg-icon icon-class="1-03"></svg-icon>
-            <svg-icon icon-class="1-04"></svg-icon>
-            <svg-icon icon-class="1-05"></svg-icon>
-            <svg-icon icon-class="1-06"></svg-icon>
-
+            <svg-icon icon-class="football"></svg-icon>
   </div>
 </template>
 
