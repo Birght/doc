@@ -1,6 +1,6 @@
 <template>
   <div>
-      svg demo
+      <svg-icon icon-class="football"></svg-icon>
   </div>
 </template>
 

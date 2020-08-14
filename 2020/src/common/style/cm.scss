@@ -1,0 +1,110 @@
+/* auth:Bright,ommon css */
+html,body{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+a {
+background-color: transparent;
+text-decoration: none;
+color: #337ab7;
+}
+a:active,
+a:hover {
+outline: 0;
+}
+/* 字体颜色---分别为主体颜色，primary藏蓝色 */
+/* 字体颜色---白色 */
+/* 字体颜色---深灰色，常用为border */
+/* 字体颜色---红色，警告，报错 */
+/* 字体颜色---绿色，提交成功 */
+
+$primary: #337ab7;
+$white: #fff;
+$dark: rgb(177, 177, 177);
+$red: red;
+$green: green;
+
+// 系统主题色调，文字使用，蓝紫
+.cm_color1{
+    color: $primary
+}
+// 系统主题色调，文字使用，蓝紫
+.cm_color2{
+    color: $white
+}
+.cm_color3{
+    color: $dark
+}
+
+/* 背景颜色 */
+.cm_bg_color1{
+    background-color: $primary
+}
+.cm_bg_color2{
+    background-color:$white
+}
+.cm_bg_color3{
+    background-color: dark
+}
+
+/* 字体大小 */
+.cm_font12{
+    font-size: 12px;
+}
+.cm_font14{
+    font-size: 14px;
+}
+.cm_font24{
+    font-size: 24px;
+}
+
+/* 内容显示控制，居左，居中，居右 ,follow bootstrap*/
+.cm_text_center{
+    text-align: center;
+}
+.cm_text_left{
+    text-align: left;
+}
+.cm_text_right{
+    text-align: right;
+}
+
+/* 外间距margin */
+.cm_mar_10{
+    margin: 10px;
+}
+
+.cm_mar_t10{
+    margin-top: 10px;
+}
+.cm_mar_tb10{
+    margin: 10px 0;
+}
+.cm_mar_lr10{
+    margin: 0 10px;
+}
+.cm_mar_20{
+    margin: 20px;
+}
+.cm_mar_t50{
+    margin-top: 50px;
+}
+
+/* 内间距padding */
+.cm_pad_10{
+    padding: 10px;
+}
+.cm_pad_t10{
+    padding-top: 10px;
+}
+.cm_pad_tb10{
+    padding-top: 10px;
+}
+.cm_pad_lr10{
+    padding: 0 10px;
+}
+.cm_pad_20{
+    padding: 20px;
+}
