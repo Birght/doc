@@ -1,8 +1,12 @@
-<!-- <p align="center">
+<p align="center">
     <img width="60" 
     src="https://s1.ax1x.com/2020/07/17/Uyfqs0.th.jpg" alt="Uyfqs0.jpg" border="0" />
 </p>
-
+<style>
+  .markdown-body{
+    background-color:red;
+  }
+</style>
 <p align="center">
   <a href="https://github.com/vuejs/vue">
     <img src="https://img.shields.io/badge/vue-2.6.10-brightgreen.svg" alt="vue">
@@ -10,7 +14,7 @@
   <a href="https://github.com/ElemeFE/element">
     <img src="https://img.shields.io/badge/element--ui-2.7.0-brightgreen.svg" alt="element-ui">
   </a>
-</p> -->
+</p>
 
 ## 前端开发文档
 
