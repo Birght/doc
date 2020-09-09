@@ -323,7 +323,7 @@ gzip_vary           on;
                     <div class="doc_pannel_head" role="tab" id="headingThree">
                       <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
                         href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                        2, 增加图片压缩与svg压缩， image-webpack-loader,svg-sprite-loader
+                        3, 增加图片压缩与svg压缩， image-webpack-loader,svg-sprite-loader
                       </a>
                     </div>
                     <div id="collapseThree" class="panel-collapse collapse" role="tabpanel"
@@ -387,14 +387,14 @@ npm install svg-sprite-loader -D</pre>
                   </div>
 
                   <div class="doc_panel">
-                    <div class="doc_pannel_head" role="tab" id="headingThree">
+                    <div class="doc_pannel_head" role="tab" id="heading4">
                       <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
                         href="#collapsefour" aria-expanded="false" aria-controls="collapsefour">
-                        2, 删除prod生产环境注释，console,debugger
+                        4, 删除prod生产环境注释，console,debugger
                       </a>
                     </div>
                     <div id="collapsefour" class="panel-collapse collapse" role="tabpanel"
-                      aria-labelledby="collapsefour">
+                      aria-labelledby="heading4">
                       <div class="doc_panel_body">
                         在生产环境中，将删除注释,(/**/),console,debugger,开发环境不受影响
                         <div class="cm_mar_20">
@@ -423,6 +423,32 @@ new UglifyJsPlugin({
                       </div>
                     </div>
                   </div>
+
+                  <div class="doc_panel">
+                    <div class="doc_pannel_head" role="tab" id="heading5">
+                      <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
+                        href="#collapsefour5" aria-expanded="false" aria-controls="collapsefour5">
+                        5, 本地启动编译后的打包文件
+                      </a>
+                    </div>
+                    <div id="collapsefour5" class="panel-collapse collapse" role="tabpanel"
+                      aria-labelledby="heading5">
+                      <div class="doc_panel_body">
+                        本地启动编译后的打包文件
+                        <div class="cm_mar_20">
+                          <kbd>配置</kbd>
+                        </div>
+                        <pre>安装依赖：http-server
+                        </pre>
+                        <pre>
+1,npm i vue-http-server
+2,cd至dist文件夹
+3，执行命令：http-server -p 9001
+                        </pre>
+                      </div>
+                    </div>
+                  </div>
+
                 </div>
 
               </div>
