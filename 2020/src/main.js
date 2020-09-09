@@ -7,7 +7,7 @@ import router from './router'
 import Element from 'element-ui'
 import '@/assets/icons'
 import 'element-ui/lib/theme-chalk/index.css'
-import './common/style/cm.scss'
+import '@/common/style/cm.scss'
 
 Vue.config.productionTip = false
 Vue.use(Element, { size: 'medium', zIndex: 3000 })

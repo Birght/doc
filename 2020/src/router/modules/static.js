@@ -2,28 +2,37 @@ import Layout from '@/layout'
 export default [
   {
     path: '/',
-    name: 'home',
+    redirect: '/home',
     meta: {
       title: '首页',
       icon: 'el-icon-s-platform'
     },
-    component: () => import('@/views/home')
-  },
-  {
-    path: '/comnpoents',
-    name: 'comnpoents',
-    meta: {
-      title: '组件',
-      icon: 'el-icon-menu'
-    },
     component: Layout,
     children: [
       {
-        path: '/demo/svg',
-        name: 'svg',
+        path: '/home',
+        name: 'home',
         meta: {
-          title: '图标展示',
+          title: '主页',
           icon: 'el-icon-menu'
+        },
+        component: () => import('@/views/home/index.vue')
+      },
+      {
+        path: '/doc',
+        name: 'doc',
+        meta: {
+          title: '文档',
+          icon: 'el-icon-thumb'
+        },
+        component: () => import('@/views/demo/doc')
+      },
+      {
+        path: '/unit',
+        name: 'unit',
+        meta: {
+          title: '统计',
+          icon: 'el-icon-s-data'
         },
         component: () => import('@/views/demo/svgdemo.vue')
       }
