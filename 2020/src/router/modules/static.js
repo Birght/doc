@@ -7,6 +7,15 @@ export default [
       title: '首页',
       icon: 'el-icon-s-platform'
     },
+    component: Layout
+  },
+  {
+    path: '/static',
+    redirect: '/doc',
+    meta: {
+      title: '综合',
+      icon: 'el-icon-s-platform'
+    },
     component: Layout,
     children: [
       {

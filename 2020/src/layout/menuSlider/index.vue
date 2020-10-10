@@ -1,23 +1,29 @@
 <template>
   <el-menu
-      @select="handleSelect"
-      active-text-color="#ffd04b"
-      default-active="/home"
-      :collapse="isCollapse"
-      :class="{ 'myMenu': isActive }"
-      >
+    @select="handleSelect"
+    active-text-color="#ffd04b"
+    default-active="/home"
+    :collapse="isCollapse"
+    :class="{ myMenu: isActive }"
+  >
+    <el-scrollbar wrap-class="scrollbar-wrapper" style="height: 100%">
       <el-menu-item index="/home">
-          <i class="el-icon-menu"></i>
-          <span slot="title">首页</span>
+        <i class="el-icon-s-data"></i>主页
       </el-menu-item>
-      <el-submenu index="2">
+      <div v-for="(item, index) in curRoutes" :key="index">
+        <el-submenu
+          index="2"
+          v-if="item.hasOwnProperty('children') && item.children.length > 0"
+        >
           <template slot="title">
-              <i class="el-icon-s-data"></i>
-              <span>综合</span>
+            <i class="el-icon-s-data"></i>
+            <span>综合</span>
           </template>
           <el-menu-item index="/doc">文档</el-menu-item>
           <el-menu-item index="/unit">组件</el-menu-item>
-      </el-submenu>
+        </el-submenu>
+      </div>
+    </el-scrollbar>
   </el-menu>
 </template>
 <script>
