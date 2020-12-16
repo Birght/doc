@@ -1,20 +1,118 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-zh">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    1,说一下vue双向数据绑定原理
-    vue实现双向绑定是使用Object.defineProperty()
-
-
-    <script>
-        let testAbc = {
-            a:111
+    <title>前端总结</title>
+    <link rel="icon" href="../doc_assets/favicon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/normalize.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/github-light.css" media="screen">
+    <link rel="stylesheet" href="../bootstrap-4.5.0-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../stylesheets/cm_all.css">
+    <style>
+        .list-group-item.active {
+            z-index: 2;
+            color: #fff;
+            background-color: #155799;
+            border-color: #155799;
         }
-        console.log(Object.defineProperty(testAbc),'测试')
+
+        a,
+        a:link,
+        a:visited,
+        a:hover,
+        a:active {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .doc_ul_menu2 {
+            padding: 5px;
+            margin: 0;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page-header">
+        <h1>使用
+            <small>&nbsp;&nbsp;<span class="badge">vue-cli,vuex,vue-router,axios,elementUI</span></small>
+        </h1>
+    </div>
+    <section class="container">
+        <div class="container-fluid">
+            <div class="cm_mar_t50">
+                <h3>BFC</h3>
+                <p>
+                    块格式化上下文（Block Formatting Context，BFC） 是Web页面的可视CSS渲染的一部分，是块盒子的布局过程发生的区域，也是浮动元素与其他元素交互的区域。
+                </p>
+                <ul>
+                    <li>
+                        html
+                    </li>
+                    <li>
+                        浮动元素
+                    </li>
+                    <li>
+                        决定定位
+                    </li>
+                    <li>
+                        行内块元素
+                    </li>
+                    <li>
+                        表格单元格
+                    </li>
+                    <li>
+                        overflow 值不为 visible 的块元素
+                    </li>
+                    <li>
+                        contain 值为 layout、content 或 paint 的元素
+                    </li>
+                </ul>
+            </div>
+            <div class="cm_mar_t50">
+                <h3>vue  nextTick</h3>
+                <p>
+                    块格式化上下文（Block Formatting Context，BFC） 是Web页面的可视CSS渲染的一部分，是块盒子的布局过程发生的区域，也是浮动元素与其他元素交互的区域。
+                </p>
+                <ul>
+                    <ol>
+
+                        
+                    </ol>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <footer class="site-footer">
+        <div class="container">
+            <div class="site-footer-owner cm_pad_20"><a href="https://github.com/Birght/doc">作者</a>
+                <a href="https://github.com/Birght">@Birght
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JS, Popper.js, and jQuery -->
+
+    <script src="../bootstrap-4.5.0-dist/js/bootstrap.jquery.js"></script>
+    <script src="../bootstrap-4.5.0-dist/js/bootstrap.min.js"></script>
+    <script>
+        $('body').scrollspy({ target: '#nav_list' })
+        $(window).scroll(function () {
+            //为了保证兼容性，这里取两个值，哪个有值取哪一个
+            //scrollTop就是触发滚轮事件时滚轮的高度
+            var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+            if (scrollTop > 260) {
+                $('#nav_list').addClass('doc_list_fiexd')
+            } else {
+                $('#nav_list').removeClass('doc_list_fiexd')
+            }
+        })
     </script>
 </body>
+
 </html>

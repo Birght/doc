@@ -33,7 +33,10 @@
 .cm_font24{
     font-size: 24px;
 }
-
+.cm_img_60{
+    width: 60px;
+    height: 60px;
+}
 /* 内容显示控制，居左，居中，居右 ,follow bootstrap*/
 .cm_text_center{
     text-align: center;
